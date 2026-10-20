@@ -37,19 +37,14 @@ export function AppPreview() {
   return (
     <section id="preview" className="border-t border-line" aria-labelledby="preview-heading">
       <div className="mx-auto w-full max-w-[90rem] px-5 py-24 sm:px-8 md:py-32 lg:px-12 lg:py-40">
-        <div className="grid gap-8 md:grid-cols-12 md:items-end">
-          <div className="md:col-span-7">
-            <p className={cn(labelClass, "text-muted")}>Preview</p>
-            <h2
-              id="preview-heading"
-              className="mt-5 max-w-[14ch] font-serif text-4xl leading-[1.08] tracking-[-0.03em] text-ink sm:text-5xl lg:text-6xl"
-            >
-              A first <em className="italic">look.</em>
-            </h2>
-          </div>
-          <p className="max-w-sm text-base leading-relaxed text-muted md:col-span-4 md:col-start-9">
-            Early screens from the iOS app in development.
-          </p>
+        <div>
+          <p className={cn(labelClass, "text-muted")}>Preview</p>
+          <h2
+            id="preview-heading"
+            className="mt-5 font-serif text-4xl leading-[1.08] tracking-[-0.03em] text-ink sm:text-5xl lg:text-6xl"
+          >
+            A first <em className="italic">look.</em>
+          </h2>
         </div>
 
         <div className="mt-14 grid items-center gap-12 bg-cream px-6 py-14 sm:px-10 md:mt-20 md:grid-cols-12 md:gap-8 md:py-20 lg:px-16">
@@ -67,7 +62,6 @@ export function AppPreview() {
             <h3 className="mt-5 max-w-[12ch] font-serif text-4xl leading-[1.08] tracking-[-0.03em] text-ink md:text-5xl">
               One Selo, every pursuit.
             </h3>
-            <p className="mt-6 text-sm text-muted">Screen recording from a development build.</p>
           </div>
         </div>
 

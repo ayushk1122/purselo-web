@@ -30,15 +30,12 @@ export function WhyPurselo() {
         </div>
 
         <div className="mt-20 grid gap-10 border-t border-line pt-14 md:mt-28 md:grid-cols-12 md:gap-8 md:pt-20">
-          <div className="md:col-span-5 lg:col-span-6">
-            <p className="flex items-baseline gap-4 text-ink">
-              <span className="font-serif text-[5.5rem] leading-[0.9] tracking-[-0.04em] italic sm:text-[7rem] lg:text-[10rem]">
-                Selo
-              </span>
-              <span className="font-serif text-xl italic text-muted">n.</span>
+          <div className="md:col-span-5 md:self-center lg:col-span-6">
+            <p className="font-serif text-[4.5rem] leading-[0.9] tracking-[-0.04em] text-ink sm:text-[6rem] md:text-right lg:text-[8.5rem]">
+              Your <em className="italic">Selo</em>
             </p>
           </div>
-          <div className="md:col-span-7 md:self-end lg:col-span-5 lg:col-start-8">
+          <div className="md:col-span-7 md:self-center lg:col-span-5 lg:col-start-8">
             <p className="font-serif text-3xl leading-[1.15] tracking-[-0.02em] text-balance text-ink md:text-4xl">
               The culmination of all of your pursuits, in one place.
             </p>
