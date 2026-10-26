@@ -10,7 +10,7 @@ export const site = {
 
 export const mosaic = {
   name: "Mosaic",
-  operator: "PURSELO LLC",
+  operator: "Purselo LLC",
   location: "Florida, United States",
   supportEmail: "support@purselo.app",
 } as const;

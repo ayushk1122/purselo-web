@@ -8,7 +8,7 @@ const effectiveDate = "October 25, 2026";
 
 export const metadata: Metadata = {
   title: "Mosaic Terms of Use",
-  description: "The terms for using the Mosaic iPhone app, operated by PURSELO LLC.",
+  description: "The terms for using the Mosaic iPhone app, operated by Purselo LLC.",
   alternates: {
     canonical: "/terms",
   },

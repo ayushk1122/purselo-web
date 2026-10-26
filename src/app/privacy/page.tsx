@@ -9,7 +9,7 @@ const effectiveDate = "October 25, 2026";
 export const metadata: Metadata = {
   title: "Mosaic Privacy Policy",
   description:
-    "How the Mosaic iPhone app, operated by PURSELO LLC, collects, uses, and protects your information.",
+    "How the Mosaic iPhone app, operated by Purselo LLC, collects, uses, and protects your information.",
   alternates: {
     canonical: "/privacy",
   },
