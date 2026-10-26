@@ -5,6 +5,7 @@ import { site } from "@/lib/site";
 
 const footerLinks = [
   { href: "/privacy", label: "Privacy" },
+  { href: "/terms", label: "Terms" },
   { href: "/support", label: "Support" },
 ] as const;
 

@@ -8,6 +8,13 @@ export const site = {
     "Purselo brings every hobby and passion you share into one customizable place, your Selo. Coming soon to iOS.",
 } as const;
 
+export const mosaic = {
+  name: "Mosaic",
+  operator: "PURSELO LLC",
+  location: "Florida, United States",
+  supportEmail: "support@purselo.app",
+} as const;
+
 export const navLinks = [
   { href: "/#about", label: "About" },
   { href: "/#contact", label: "Contact" },
