@@ -16,7 +16,7 @@ export function SiteFooter() {
         <div>
           <Wordmark tone="paper" alt={site.name} className="w-36 md:w-40" />
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-sand">
-            Every pursuit, in one Selo.
+            {site.tagline}
           </p>
         </div>
         <div>

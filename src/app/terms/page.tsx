@@ -1,41 +1,53 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LegalPage } from "@/components/legal-page";
-import { mosaic } from "@/lib/site";
+import { app } from "@/lib/site";
 
-// TODO: Confirm the effective date before the App Store launch.
-const effectiveDate = "October 25, 2026";
+const effectiveDate = "October 26, 2026";
 
 export const metadata: Metadata = {
-  title: "Mosaic Terms of Use",
-  description: "The terms for using the Mosaic iPhone app, operated by Purselo LLC.",
+  title: "Terms of Use",
+  description: "The terms for using the Purselo iPhone app, operated by Purselo LLC.",
   alternates: {
     canonical: "/terms",
   },
 };
 
-const email = mosaic.supportEmail;
+const email = app.supportEmail;
 const mailto = `mailto:${email}`;
 
-// TODO: Have legal review add any needed sections, such as a minimum age, limits of liability, dispute resolution, and how changes to these terms are announced.
+// TODO: Have legal review add any needed sections, such as limits of liability, dispute resolution, and how changes to these terms are announced.
 export default function TermsPage() {
   return (
-    <LegalPage eyebrow="Mosaic for iPhone" title="Terms of Use" effectiveDate={effectiveDate} email={email}>
+    <LegalPage eyebrow={`${app.name} for iPhone`} title="Terms of Use" effectiveDate={effectiveDate} email={email}>
       <p>
-        These terms apply when you use the {mosaic.name} iPhone app. {mosaic.name} is
-        operated by {mosaic.operator}, based in {mosaic.location}. By using Mosaic, you
-        agree to these terms.
+        These terms apply when you use the {app.name} iPhone app. {app.name} is operated by{" "}
+        {app.operator}, based in {app.location}. By using {app.name}, you agree to these
+        terms.
       </p>
+
+      <h2>Your account</h2>
+      <ul>
+        <li>You must be 13 or older to use Purselo.</li>
+        <li>
+          Keep your sign-in details secure. You&rsquo;re responsible for what happens on
+          your account.
+        </li>
+        <li>
+          You can delete your account anytime in the app under Settings &rarr; Delete
+          account. If you can&rsquo;t access the app, email <a href={mailto}>{email}</a>.
+        </li>
+      </ul>
 
       <h2>Your content</h2>
       <p>
-        You own what you create in Mosaic. You give us only the permission we need to store
+        You own what you create in Purselo. You give us only the permission we need to store
         your content and show it the way you choose, for example only to you, or to the
         people you share it with.
       </p>
 
-      <h2>Using Mosaic responsibly</h2>
-      <p>Don&rsquo;t use Mosaic to post or share content that is:</p>
+      <h2>Using Purselo responsibly</h2>
+      <p>Don&rsquo;t use Purselo to post or share content that is:</p>
       <ul>
         <li>Illegal.</li>
         <li>Abusive, threatening, or harassing.</li>
@@ -45,7 +57,7 @@ export default function TermsPage() {
 
       <h2>No warranties</h2>
       <p>
-        Mosaic is provided &ldquo;as is,&rdquo; without warranties of any kind.
+        Purselo is provided &ldquo;as is,&rdquo; without warranties of any kind.
       </p>
 
       <h2>Governing law</h2>
@@ -55,7 +67,7 @@ export default function TermsPage() {
 
       <h2>Privacy</h2>
       <p>
-        Our <Link href="/privacy">Privacy Policy</Link> explains what information Mosaic
+        Our <Link href="/privacy">Privacy Policy</Link> explains what information Purselo
         collects and how we use it.
       </p>
 

@@ -1,46 +1,34 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LegalPage } from "@/components/legal-page";
-import { mosaic } from "@/lib/site";
+import { app } from "@/lib/site";
 
-// TODO: Confirm the effective date before the App Store launch.
-const effectiveDate = "October 25, 2026";
+const effectiveDate = "October 26, 2026";
 
 export const metadata: Metadata = {
-  title: "Mosaic Privacy Policy",
+  title: "Privacy Policy",
   description:
-    "How the Mosaic iPhone app, operated by Purselo LLC, collects, uses, and protects your information.",
+    "How the Purselo iPhone app, operated by Purselo LLC, collects, uses, and protects your information.",
   alternates: {
     canonical: "/privacy",
   },
 };
 
-const email = mosaic.supportEmail;
+const email = app.supportEmail;
 const mailto = `mailto:${email}`;
-
-// TODO: Replace with in-app deletion steps once in-app account deletion ships.
-function AccountDeletion() {
-  return (
-    <p>
-      In-app account deletion is coming soon. Until then, email <a href={mailto}>{email}</a>{" "}
-      from the email address on your Mosaic account and ask us to delete your account.
-      Within 30 days, we&rsquo;ll delete your account, boards, media, follows, and visits.
-    </p>
-  );
-}
 
 export default function PrivacyPage() {
   return (
     <LegalPage
-      eyebrow="Mosaic for iPhone"
+      eyebrow={`${app.name} for iPhone`}
       title="Privacy Policy"
       effectiveDate={effectiveDate}
       email={email}
     >
       <p>
-        This policy explains what information the {mosaic.name} iPhone app collects, how
-        we use it, and the choices you have. {mosaic.name} is operated by {mosaic.operator}{" "}
-        (&ldquo;we,&rdquo; &ldquo;us&rdquo;), based in {mosaic.location}. If you have a
+        This policy explains what information the {app.name} iPhone app collects, how we
+        use it, and the choices you have. {app.name} is operated by {app.operator}{" "}
+        (&ldquo;we,&rdquo; &ldquo;us&rdquo;), based in {app.location}. If you have a
         question, email <a href={mailto}>{email}</a>.
       </p>
 
@@ -50,17 +38,18 @@ export default function PrivacyPage() {
         <li>We collect what we need to run your account and show your content the way you choose.</li>
         <li>No ads, no ad tracking, no third-party analytics, and we never sell your data.</li>
         <li>
-          We don&rsquo;t track your location or access your contacts. Mosaic only sees the
+          We don&rsquo;t track your location or access your contacts. Purselo only sees the
           photos and videos you pick.
         </li>
       </ul>
 
-      <h2>What Mosaic is</h2>
+      <h2>What Purselo is</h2>
       <p>
-        Mosaic is a personal app for documenting long-running &ldquo;Pursuits&rdquo;: areas
-        of life and growth, like golf. You build them as visual boards with text, photos,
-        videos, drawings, calendars, tables, and journals. Everything is private by
-        default, and sharing is always your choice.
+        Purselo is a personal app for documenting long-running &ldquo;Pursuits&rdquo;: areas
+        of life and growth, like golf. Your Pursuits live on your Selo, your main board.
+        You build them as visual boards with text, photos, videos, drawings, calendars,
+        tables, and journals. Everything is private by default, and sharing is always your
+        choice.
       </p>
 
       <h2>Information we collect</h2>
@@ -68,7 +57,8 @@ export default function PrivacyPage() {
       <ul>
         <li>
           <strong>Email address.</strong> You sign in with a 6-digit code we email you, or
-          with your email and a password.
+          with your email or username and a password. If you forget your password, we email
+          you a code to reset it.
         </li>
         <li>
           <strong>Google or Apple sign-in.</strong> If you choose one, we receive your name
@@ -81,25 +71,35 @@ export default function PrivacyPage() {
           against lists of known breached passwords.
         </li>
         <li>
-          <strong>Username, display name, and profile picture.</strong> These are public.
-          The profile picture is optional.
+          <strong>Username, display name, and profile picture.</strong> These are public,
+          and people can find you by username or display name in search. The profile
+          picture is optional.
         </li>
         <li>
-          <strong>Birthday.</strong> We ask for it when you sign up. It&rsquo;s stored
-          privately and never shown to other people.
-          {/* TODO: Explain why the birthday is collected once its use is decided. */}
+          <strong>Birthday.</strong> We ask for it when you sign up to confirm you&rsquo;re
+          13 or older. It&rsquo;s stored privately and never shown to other people. It
+          can&rsquo;t be changed in the app after sign-up; if it&rsquo;s wrong, email{" "}
+          <a href={mailto}>{email}</a>.
         </li>
       </ul>
 
       <h3>What you create</h3>
       <ul>
         <li>
-          Your boards (your Mosaic and your Pursuits), journals, text, drawings, stickers,
+          Your boards (your Selo and your Pursuits), journals, text, drawings, stickers,
           calendars, tables, and the photos and videos you add.
         </li>
         <li>
-          Photos and videos are uploaded in a compressed form for viewing. We also keep the
-          originals so your content stays intact.
+          Photos are uploaded along with smaller copies for viewing, and we keep the
+          original so your content stays intact. Videos are converted on your phone to a
+          smaller format (up to 1080p) before they&rsquo;re uploaded.
+        </li>
+        <li>
+          Links you add to posts or profiles on YouTube, Instagram, TikTok, Twitch, Spotify,
+          Apple Music, or SoundCloud. When you add a link, your phone asks that service for
+          the post&rsquo;s title and preview image, and the preview is saved with your
+          board. People viewing your board see the saved preview; opening it takes them to
+          that service, which handles the visit under its own privacy policy.
         </li>
       </ul>
 
@@ -120,9 +120,8 @@ export default function PrivacyPage() {
           deleted after about 2 days.
         </li>
         <li>
-          <strong>Explore.</strong> A board appears in the public Explore feed only if you
-          turn on sharing for that board. The preview image shown in Explore is created on
-          your device.
+          <strong>Explore.</strong> Your Selo or a Pursuit appears in Explore only if you
+          choose to share it. The preview image shown in Explore is created on your device.
         </li>
       </ul>
 
@@ -132,12 +131,12 @@ export default function PrivacyPage() {
         <li>No third-party analytics or tracking tools.</li>
         <li>No selling of your data.</li>
         <li>No location tracking and no access to your contacts.</li>
-        <li>Mosaic accesses your photos only when you pick them.</li>
+        <li>Purselo accesses your photos only when you pick them.</li>
       </ul>
 
       <h2>How we use your information</h2>
       <p>
-        We use your information only to run Mosaic: to sign you in, store your boards and
+        We use your information only to run Purselo: to sign you in, store your boards and
         media, show your content to the people you choose, power the social features you
         use, and answer you when you contact us.
       </p>
@@ -158,25 +157,29 @@ export default function PrivacyPage() {
       </ul>
 
       <h2>Service providers</h2>
-      <p>We use a small number of companies to run Mosaic:</p>
+      <p>We use a small number of companies to run Purselo:</p>
       <ul>
         <li>
           <strong>Supabase</strong> for our database, sign-in, and file storage, hosted on
           Amazon Web Services in the United States (N. Virginia).
         </li>
         <li>
-          <strong>Resend</strong> to send sign-in code emails. It receives only your email
-          address and the code.
+          <strong>Resend</strong> to send sign-in and password reset code emails. It
+          receives only your email address and the code.
         </li>
         <li>
           <strong>Google and Apple</strong>, only if you choose to sign in with them.
+        </li>
+        <li>
+          <strong>The services behind links you add</strong> (listed above), only to fetch a
+          preview when you add a link.
         </li>
         <li>
           <strong>Netlify</strong>, which hosts this website.
         </li>
       </ul>
       <p>
-        Your information is stored in the United States. If you use Mosaic from outside
+        Your information is stored in the United States. If you use Purselo from outside
         the US, your information is transferred to and processed in the US.
         {/* TODO: Add the legal mechanism for EU/UK data transfers after legal review. */}
       </p>
@@ -186,7 +189,12 @@ export default function PrivacyPage() {
         <li>Your data is encrypted in transit using HTTPS/TLS.</li>
         <li>Access to each person&rsquo;s data is enforced on our servers.</li>
         <li>
-          The app keeps a copy of your own boards on your device so Mosaic works offline.
+          The app keeps a copy of your own boards on your device so Purselo works offline.
+        </li>
+        <li>
+          The app also keeps temporary copies of pictures from boards you view, such as
+          profile pictures and previews, so they load faster. Copies you haven&rsquo;t used
+          in about 30 days are removed.
         </li>
         <li>We keep your content for as long as your account exists.</li>
         <li>
@@ -202,7 +210,18 @@ export default function PrivacyPage() {
 
       <h2>Deleting your content and account</h2>
       <p>You can delete individual boards and content in the app at any time.</p>
-      <AccountDeletion />
+      <p>
+        You can delete your account anytime in the app under Settings &rarr; Delete
+        account. This permanently removes your account, boards, photos, videos, profile,
+        follows, and visits. If you can&rsquo;t access the app, email{" "}
+        <a href={mailto}>{email}</a>.
+      </p>
+      <p>
+        If you email us, write from the address on your account so we can confirm the
+        request is yours, and we&rsquo;ll delete your account within 30 days. Deleting your
+        account also removes the copy of your boards stored on that phone. Data in our
+        hosting provider&rsquo;s backups is removed when those backups expire.
+      </p>
 
       <h2>Your privacy rights</h2>
       <p>
@@ -226,9 +245,10 @@ export default function PrivacyPage() {
 
       <h2>Children</h2>
       <p>
-        Mosaic isn&rsquo;t intended for children under 13, and we don&rsquo;t knowingly
-        collect their information. If we learn we have, we&rsquo;ll delete it. If you
-        believe a child under 13 is using Mosaic, email <a href={mailto}>{email}</a>.
+        Purselo is for people 13 and older. We ask for your birthday at sign-up and
+        don&rsquo;t create accounts for anyone younger. We don&rsquo;t knowingly collect
+        information from children under 13; if we learn we have, we&rsquo;ll delete it. If
+        you believe a child under 13 is using Purselo, email <a href={mailto}>{email}</a>.
       </p>
 
       <h2>Changes to this policy</h2>
@@ -239,7 +259,7 @@ export default function PrivacyPage() {
 
       <h2>Contact us</h2>
       <p>
-        {mosaic.operator}, {mosaic.location}
+        {app.operator}, {app.location}
         <br />
         <a href={mailto}>{email}</a>
       </p>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import { DemoVideo } from "@/components/demo-video";
 import { PhoneFrame } from "@/components/phone-frame";
 import { cn } from "@/lib/cn";
+import { site } from "@/lib/site";
 
 const screens = [
   {
@@ -60,7 +61,7 @@ export function AppPreview() {
           <div className="md:col-span-6 md:col-start-7 lg:col-span-5 lg:col-start-7">
             <p className={cn(labelClass, "text-muted")}>In motion</p>
             <h3 className="mt-5 max-w-[12ch] font-serif text-4xl leading-[1.08] tracking-[-0.03em] text-ink md:text-5xl">
-              One Selo, every pursuit.
+              {site.tagline}
             </h3>
           </div>
         </div>
