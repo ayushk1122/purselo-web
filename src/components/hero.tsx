@@ -1,4 +1,5 @@
 import { Monogram } from "@/components/brand";
+import { site } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -12,7 +13,10 @@ export function Hero() {
           <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-ink" />
           Coming soon to iOS
         </p>
-        <h1 className="rise rise-2 relative mt-8 font-serif text-[2.75rem] leading-[1.02] tracking-[-0.035em] text-ink sm:text-6xl md:mt-14 md:max-w-[16ch] md:text-7xl lg:text-[6.5rem]">
+        <p className="rise rise-2 mt-8 text-sm tracking-[0.02em] whitespace-nowrap text-muted md:mt-14 md:text-base">
+          {site.tagline}
+        </p>
+        <h1 className="rise rise-2 relative mt-3 font-serif text-[2.75rem] leading-[1.02] tracking-[-0.035em] text-ink sm:text-6xl md:mt-4 md:max-w-[16ch] md:text-7xl lg:text-[6.5rem]">
           <span className="block md:inline">Everything you </span>
           <em className="block italic md:inline">pursue, </em>
           <span className="block md:inline">in one place.</span>
