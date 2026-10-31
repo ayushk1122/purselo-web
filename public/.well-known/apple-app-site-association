@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["86ZH4P4J99.com.purselo.app"],
+        "components": [
+          { "/": "/@*", "comment": "Selos and Pursuits" }
+        ]
+      }
+    ]
+  }
+}
