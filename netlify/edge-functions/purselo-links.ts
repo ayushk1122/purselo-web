@@ -56,5 +56,4 @@ export default async function purseloLinks(request: Request): Promise<Response |
 
 export const config = {
   pattern: "^/(?:@|%40)",
-  method: ["GET", "HEAD"],
 };
