@@ -54,6 +54,13 @@ export default function TermsPage() {
         <li>Infringing on someone else&rsquo;s rights, such as their copyright.</li>
       </ul>
       <p>We may suspend accounts that break these rules.</p>
+      <p>
+        Purselo has no tolerance for objectionable content or abusive users. Don&rsquo;t
+        post content that is sexually explicit, hateful, violent, harassing, or that
+        endangers anyone, including yourself. You can report a profile, Selo, Pursuit, or
+        Explore card, and block anyone. We review reports within 24 hours and may remove
+        content and suspend or delete accounts that break these rules.
+      </p>
 
       <h2>No warranties</h2>
       <p>
