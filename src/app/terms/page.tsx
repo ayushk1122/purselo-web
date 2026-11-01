@@ -140,7 +140,7 @@ export default function TermsPage() {
         <br />
         915 Middle River Drive, Suite 517, Fort Lauderdale, FL 33304
         <br />
-        Phone: <a href="tel:+12063798919">206-379-8919</a>
+        Phone: <a href="tel:+17169805283">716-980-5283</a>
         <br />
         Email: <a href={mailto}>{email}</a>
       </address>
