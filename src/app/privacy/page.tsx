@@ -3,7 +3,7 @@ import Link from "next/link";
 import { LegalPage } from "@/components/legal-page";
 import { app } from "@/lib/site";
 
-const effectiveDate = "October 26, 2026";
+const lastUpdated = "November 1, 2026";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -22,7 +22,7 @@ export default function PrivacyPage() {
     <LegalPage
       eyebrow={`${app.name} for iPhone`}
       title="Privacy Policy"
-      effectiveDate={effectiveDate}
+      lastUpdated={lastUpdated}
       email={email}
     >
       <p>
@@ -53,12 +53,18 @@ export default function PrivacyPage() {
       </p>
 
       <h2>Information we collect</h2>
+      <p>
+        We collect information only to run the app. Nothing is used for advertising or
+        tracking, and there are no analytics or third-party advertising SDKs.
+      </p>
       <h3>Your account</h3>
       <ul>
         <li>
-          <strong>Email address.</strong> You sign in with a 6-digit code we email you, or
-          with your email or username and a password. If you forget your password, we email
-          you a code to reset it.
+          <strong>Email address.</strong> We use it to sign you in and send account emails.
+          You sign in with a 6-digit code we email you, or with your email or username and a
+          password. If you forget your password, we email you a code to reset it. If you use
+          Sign in with Apple and hide your email, we only get Apple&rsquo;s private relay
+          address.
         </li>
         <li>
           <strong>Google or Apple sign-in.</strong> If you choose one, we receive your name
@@ -71,13 +77,14 @@ export default function PrivacyPage() {
           against lists of known breached passwords.
         </li>
         <li>
-          <strong>Username, display name, and profile picture.</strong> These are public,
-          and people can find you by username or display name in search. The profile
-          picture is optional.
+          <strong>Name, username, account ID, and profile picture.</strong> Your name is
+          your display name, which Apple or Google may suggest at sign-up. Your username,
+          display name, and profile picture are public, and people can find you by username
+          or display name in search. The profile picture is optional.
         </li>
         <li>
-          <strong>Birthday.</strong> We ask for it when you sign up to confirm you&rsquo;re
-          13 or older. It&rsquo;s stored privately and never shown to other people. It
+          <strong>Birthday.</strong> We ask for it when you sign up to check that you meet
+          the 13+ minimum age. It&rsquo;s private to you and never shown to others. It
           can&rsquo;t be changed in the app after sign-up; if it&rsquo;s wrong, email{" "}
           <a href={mailto}>{email}</a>.
         </li>
@@ -92,15 +99,19 @@ export default function PrivacyPage() {
         <li>
           Photos are uploaded along with smaller copies for viewing, and we keep the
           original so your content stays intact. Videos are converted on your phone to a
-          smaller format (up to 1080p) before they&rsquo;re uploaded.
+          smaller format (up to 1080p) before they&rsquo;re uploaded. Uploads don&rsquo;t
+          carry the location where a photo or video was taken; the app removes it before
+          uploading.
         </li>
         <li>
-          Links you add to posts or profiles on YouTube, Instagram, TikTok, Twitch, Spotify,
-          Apple Music, or SoundCloud. When you add a link, your phone asks that service for
-          the post&rsquo;s title and preview image, and the preview is saved with your
-          board. People viewing your board see the saved preview; opening it takes them to
-          that service, which handles the visit under its own privacy policy.
+          Content cards: links you add to posts or profiles on YouTube, Instagram, TikTok,
+          Twitch, X, Spotify, Apple Music, or SoundCloud. When you add a Content card, your
+          phone fetches the preview from that service, and the preview is saved with your
+          board. People viewing your boards see the saved preview and only contact the
+          service if they open the link, which takes them to that service under its own
+          privacy policy.
         </li>
+        <li>Details you write when you report something.</li>
       </ul>
 
       <h3>Social features, only when you use them</h3>
@@ -111,13 +122,14 @@ export default function PrivacyPage() {
         </li>
         <li>
           <strong>Visits.</strong> When someone opens another person&rsquo;s board, we record
-          that visit. Board owners see only a daily count of distinct visitors, never who
-          visited. Visit records are deleted after 90 days.
+          that visit. Board owners see visits in Circle, as a daily count of distinct
+          visitors, never who visited. Visit records are deleted after 90 days.
         </li>
         <li>
-          <strong>Orbit.</strong> Records of recent changes that power the Orbit update feed
-          are deleted after 30 days. Markers showing what you&rsquo;ve already seen are
-          deleted after about 2 days.
+          <strong>Orbit and Circle.</strong> We keep track of what you&rsquo;ve last seen in
+          Orbit and Circle. Records of recent changes that power the Orbit update feed are
+          deleted after 30 days. Markers showing what you&rsquo;ve already seen are deleted
+          after about 2 days.
         </li>
         <li>
           <strong>Explore.</strong> Your Selo or a Pursuit appears in Explore only if you
@@ -128,25 +140,28 @@ export default function PrivacyPage() {
       <h2>What we don&rsquo;t collect</h2>
       <ul>
         <li>No advertising and no ad tracking.</li>
-        <li>No third-party analytics or tracking tools.</li>
+        <li>No analytics, and no third-party advertising SDKs or tracking tools.</li>
         <li>No selling of your data.</li>
-        <li>No location tracking and no access to your contacts.</li>
+        <li>
+          We don&rsquo;t collect your location, contacts, phone number, browsing or search
+          history, or diagnostics.
+        </li>
         <li>Purselo accesses your photos only when you pick them.</li>
       </ul>
 
       <h2>How we use your information</h2>
       <p>
-        We use your information only to run Purselo: to sign you in, store your boards and
-        media, show your content to the people you choose, power the social features you
-        use, and answer you when you contact us.
+        We use your information only to run Purselo: to sign you in, send account emails,
+        store your boards and media, show your content to the people you choose, power the
+        social features you use, review reports, and answer you when you contact us.
+        Nothing is used for advertising or tracking.
       </p>
 
       <h2>Who can see what</h2>
       <ul>
         <li>
-          Boards are private by default. For each board, you choose private or public. For
-          Pursuits, you can also choose hidden.
-          {/* TODO: Describe what "hidden" means for other people viewing a Pursuit. */}
+          Boards are private by default. You choose who sees what: people you approve, your
+          followers, or everyone if you share a board to Explore.
         </li>
         <li>
           Private pieces inside a board are removed on our servers before anyone else can
@@ -154,6 +169,7 @@ export default function PrivacyPage() {
         </li>
         <li>Your username, display name, and profile picture are public.</li>
         <li>Your birthday is never shown to anyone else.</li>
+        <li>Blocking someone hides you from them entirely.</li>
       </ul>
 
       <h2>Service providers</h2>
@@ -164,15 +180,15 @@ export default function PrivacyPage() {
           Amazon Web Services in the United States (N. Virginia).
         </li>
         <li>
-          <strong>Resend</strong> to send sign-in and password reset code emails. It
-          receives only your email address and the code.
+          <strong>Resend</strong> to send our emails, including sign-in and password reset
+          codes and report notices to our team.
         </li>
         <li>
           <strong>Google and Apple</strong>, only if you choose to sign in with them.
         </li>
         <li>
-          <strong>The services behind links you add</strong> (listed above), only to fetch a
-          preview when you add a link.
+          <strong>The services behind Content cards</strong> (listed above, for example
+          YouTube or X), only when your phone fetches a preview as you add a card.
         </li>
         <li>
           <strong>Netlify</strong>, which hosts this website.
@@ -211,16 +227,14 @@ export default function PrivacyPage() {
       <h2>Deleting your content and account</h2>
       <p>You can delete individual boards and content in the app at any time.</p>
       <p>
-        You can delete your account anytime in the app under Settings &rarr; Delete
-        account. This permanently removes your account, boards, photos, videos, profile,
-        follows, and visits. If you can&rsquo;t access the app, email{" "}
-        <a href={mailto}>{email}</a>.
+        In the app, Settings &rarr; Delete account removes your account and everything
+        listed under &ldquo;Information we collect,&rdquo; except reports, which are kept for
+        safety records without a link to your account. Deleting your account also removes
+        the copy of your boards stored on that phone. Data in our hosting provider&rsquo;s
+        backups is removed when those backups expire.
       </p>
       <p>
-        If you email us, write from the address on your account so we can confirm the
-        request is yours, and we&rsquo;ll delete your account within 30 days. Deleting your
-        account also removes the copy of your boards stored on that phone. Data in our
-        hosting provider&rsquo;s backups is removed when those backups expire.
+        Questions about deleting your data? Email <a href={mailto}>{email}</a>.
       </p>
 
       <h2>Your privacy rights</h2>
@@ -237,10 +251,11 @@ export default function PrivacyPage() {
         <li>Complain to your local data protection authority.</li>
       </ul>
       <p>
-        We don&rsquo;t sell your personal information or share it for advertising. To make
-        a request, email <a href={mailto}>{email}</a> from the address on your account so
-        we can confirm the request is yours. We&rsquo;ll handle it as the privacy laws that
-        apply to you require.
+        We don&rsquo;t sell your personal information or share it for advertising. You can
+        delete your account yourself in the app, as described above. For other requests,
+        email <a href={mailto}>{email}</a> from the address on your account so we can
+        confirm the request is yours. We&rsquo;ll handle it as the privacy laws that apply
+        to you require.
       </p>
 
       <h2>Children</h2>
@@ -253,8 +268,8 @@ export default function PrivacyPage() {
 
       <h2>Changes to this policy</h2>
       <p>
-        When we update this policy, we&rsquo;ll change the effective date at the top. If we
-        make material changes, we&rsquo;ll also let you know in the app.
+        When we update this policy, we&rsquo;ll change the &ldquo;Last updated&rdquo; date at
+        the top. If we make material changes, we&rsquo;ll also let you know in the app.
       </p>
 
       <h2>Contact us</h2>
