@@ -32,8 +32,11 @@ export default function SupportPage() {
       <h2>Deleting your account</h2>
       <p>
         You can delete your account anytime in the app under Settings &rarr; Delete
-        account. This permanently removes your account, boards, photos, videos, profile,
-        follows, and visits. If you can&rsquo;t access the app, email{" "}
+        account. This permanently removes your profile, boards, Pursuits, photos, videos,
+        follows, and followers.
+      </p>
+      <p>
+        For anything else with your account, including if you can&rsquo;t sign in, email{" "}
         <a href={`mailto:${supportEmail}`}>{supportEmail}</a>.
       </p>
 
