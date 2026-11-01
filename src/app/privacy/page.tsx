@@ -127,9 +127,15 @@ export default function PrivacyPage() {
         </li>
         <li>
           <strong>Orbit and Circle.</strong> We keep track of what you&rsquo;ve last seen in
-          Orbit and Circle. Records of recent changes that power the Orbit update feed are
-          deleted after 30 days. Markers showing what you&rsquo;ve already seen are deleted
-          after about 2 days.
+          Orbit and Circle. What you&rsquo;ve last seen in Orbit is deleted after 2 days.
+          Records of new pieces, used for Orbit and &ldquo;Recently updated,&rdquo; are
+          deleted after 30 days. What you&rsquo;ve last seen in Circle is kept until you
+          delete your account.
+        </li>
+        <li>
+          <strong>Blocks.</strong> We keep the list of people you&rsquo;ve blocked so the
+          block works. Only you can see it, and it&rsquo;s kept until you unblock them or
+          delete your account.
         </li>
         <li>
           <strong>Explore.</strong> Your Selo or a Pursuit appears in Explore only if you
@@ -164,6 +170,10 @@ export default function PrivacyPage() {
           followers, or everyone if you share a board to Explore.
         </li>
         <li>
+          Each Pursuit can be Public (anyone with the link), Private (people you approve),
+          or Hidden (only you). Moderators can also make a Pursuit Hidden.
+        </li>
+        <li>
           Private pieces inside a board are removed on our servers before anyone else can
           see that board.
         </li>
@@ -188,16 +198,18 @@ export default function PrivacyPage() {
         </li>
         <li>
           <strong>The services behind Content cards</strong> (listed above, for example
-          YouTube or X), only when your phone fetches a preview as you add a card.
+          YouTube or X), only when your phone fetches a preview as you add a card and, for X
+          posts, when your phone checks them with X once a day.
         </li>
         <li>
           <strong>Netlify</strong>, which hosts this website.
         </li>
       </ul>
+
+      <h2>Where Purselo is available</h2>
       <p>
-        Your information is stored in the United States. If you use Purselo from outside
-        the US, your information is transferred to and processed in the US.
-        {/* TODO: Add the legal mechanism for EU/UK data transfers after legal review. */}
+        Purselo is currently offered only in the United States, and your information is
+        stored there (Amazon Web Services in N. Virginia, through Supabase).
       </p>
 
       <h2>Storage, security, and retention</h2>
@@ -216,6 +228,10 @@ export default function PrivacyPage() {
         <li>
           Photos and videos that are no longer used by any board are deleted automatically
           after 14 days.
+        </li>
+        <li>
+          Reports are kept as long as they&rsquo;re needed for safety records. Once the
+          account of a person involved is deleted, the report is no longer linked to them.
         </li>
         <li>
           Our hosting provider keeps daily database backups for a limited period, so

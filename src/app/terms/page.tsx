@@ -16,7 +16,6 @@ export const metadata: Metadata = {
 const email = app.supportEmail;
 const mailto = `mailto:${email}`;
 
-// TODO: Have legal review add any needed sections, such as limits of liability, dispute resolution, and how changes to these terms are announced.
 export default function TermsPage() {
   return (
     <LegalPage eyebrow={`${app.name} for iPhone`} title="Terms of Use" lastUpdated={lastUpdated} email={email}>
@@ -54,10 +53,16 @@ export default function TermsPage() {
       <h2>Content from other services</h2>
       <p>
         Content cards link to posts, videos, and music on YouTube, Instagram, TikTok,
-        Twitch, X, Spotify, Apple Music, and SoundCloud. A card shows a preview (and, for X,
-        the post as X provides it) and opens the original on that service. Purselo
-        doesn&rsquo;t host or play that content, and those services&rsquo; own terms apply
-        to it. If an X post is deleted or made private on X, its card stops showing it.
+        Twitch, X, Spotify, Apple Music, and SoundCloud. A card shows a preview and opens the
+        original on that service. Purselo doesn&rsquo;t host or play that content, and those
+        services&rsquo; own terms apply to it.
+      </p>
+      <p>
+        For an X post, the card shows a saved copy of the post: its text, photo, and the
+        author&rsquo;s picture. People viewing your board never contact X. Once a day, your
+        own phone checks each X post with X. If X no longer shows a post (because it was
+        deleted, made private, or suspended), its card stops showing it. If a post was
+        edited, its card gets the new text.
       </p>
 
       <h2>Using Purselo responsibly</h2>
@@ -128,10 +133,17 @@ export default function TermsPage() {
       <h2>Copyright notices</h2>
       <p>
         If you believe content on Purselo infringes your copyright, send a notice to our
-        designated agent: PURSELO LLC, Attn: Copyright Agent,{" "}
-        <a href={mailto}>{email}</a>.
-        {/* TODO: Add the copyright agent's postal address. */}
+        designated agent:
       </p>
+      <address className="not-italic">
+        Copyright Agent, {app.operator}
+        <br />
+        915 Middle River Drive, Suite 517, Fort Lauderdale, FL 33304
+        <br />
+        Phone: <a href="tel:+12063798919">206-379-8919</a>
+        <br />
+        Email: <a href={mailto}>{email}</a>
+      </address>
       <p>Include:</p>
       <ul>
         <li>What&rsquo;s being infringed.</li>
@@ -144,7 +156,12 @@ export default function TermsPage() {
       </ul>
       <p>
         In the app, the &ldquo;Uses my work without permission&rdquo; report reason reaches us
-        the same way. We remove infringing content and may suspend repeat infringers.
+        the same way.
+      </p>
+      <p>
+        We review each notice. If the content is infringing, we remove or disable it, and we
+        may suspend repeat infringers. Sending a notice in bad faith can be a legal issue for
+        you.
       </p>
 
       <h2>No warranties</h2>
@@ -152,9 +169,45 @@ export default function TermsPage() {
         Purselo is provided &ldquo;as is,&rdquo; without warranties of any kind.
       </p>
 
+      {/* draft: legal review before a wider launch */}
+      <h2>Limitation of liability</h2>
+      <p>
+        To the extent the law allows, {app.operator} isn&rsquo;t liable for indirect or
+        consequential losses, or for content people add or link to.
+      </p>
+
+      {/* draft: legal review before a wider launch */}
+      <h2>Indemnification</h2>
+      <p>
+        You&rsquo;re responsible for the content you add. You agree to cover {app.operator}{" "}
+        for claims that arise from that content or from your breaking these terms.
+      </p>
+
+      {/* draft: legal review before a wider launch */}
+      <h2>Ending the agreement</h2>
+      <p>
+        We may suspend or end your access if you break these terms. You can stop anytime by
+        deleting your account in Settings &rarr; Delete account.
+      </p>
+
+      {/* draft: legal review before a wider launch */}
+      <h2>Changes to these terms</h2>
+      <p>
+        When we change these terms, we&rsquo;ll update the &ldquo;Last updated&rdquo; date at
+        the top. For significant changes, we&rsquo;ll also tell you in the app. Using Purselo
+        after a change means you accept it.
+      </p>
+
       <h2>Governing law</h2>
       <p>
         These terms are governed by the laws of the State of Florida, United States.
+      </p>
+
+      {/* draft: legal review before a wider launch */}
+      <h2>Disputes</h2>
+      <p>
+        If you have a dispute with us, please contact <a href={mailto}>{email}</a> first so we
+        can try to resolve it. Disputes are handled under the Governing law section above.
       </p>
 
       <h2>Privacy</h2>
