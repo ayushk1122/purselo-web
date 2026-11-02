@@ -93,15 +93,14 @@ export function AppPreview() {
                 key={recording.slug}
                 className="w-[62vw] max-w-[15rem] shrink-0 snap-start md:mx-auto md:w-full md:max-w-[17.5rem]"
               >
-                <PhoneFrame>
-                  <DemoVideo
-                    src={`/preview/purselo-${recording.slug}.mp4`}
-                    poster={`/preview/purselo-${recording.slug}-poster.webp`}
-                    label={recording.label}
-                  />
-                </PhoneFrame>
-                <h4 className="mt-6 font-serif text-2xl tracking-[-0.02em] text-ink">{recording.title}</h4>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{recording.copy}</p>
+                <DemoVideo
+                  src={`/preview/purselo-${recording.slug}.mp4`}
+                  poster={`/preview/purselo-${recording.slug}-poster.webp`}
+                  label={recording.label}
+                >
+                  <h4 className="font-serif text-2xl tracking-[-0.02em] text-ink">{recording.title}</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{recording.copy}</p>
+                </DemoVideo>
               </li>
             ))}
           </ul>
