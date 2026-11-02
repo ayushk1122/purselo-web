@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  publish = "out"
+  publish = ".next"
 
 [build.environment]
   NODE_VERSION = "24"
@@ -14,15 +14,3 @@
   for = "/.well-known/apple-app-site-association"
   [headers.values]
     Content-Type = "application/json"
-
-[[headers]]
-  for = "/moderate"
-  [headers.values]
-    Referrer-Policy = "no-referrer"
-    X-Robots-Tag = "noindex, nofollow"
-
-[[headers]]
-  for = "/moderate.html"
-  [headers.values]
-    Referrer-Policy = "no-referrer"
-    X-Robots-Tag = "noindex, nofollow"
