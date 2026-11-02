@@ -35,6 +35,7 @@ const screens = [
 const recordings = [
   {
     slug: "demo",
+    autoPlay: true,
     title: "Selo",
     copy: "Step from your Selo into each Pursuit.",
     label:
@@ -42,6 +43,7 @@ const recordings = [
   },
   {
     slug: "orbit",
+    autoPlay: false,
     title: "Orbit",
     copy: "Catch up on what\u2019s new from boards you follow.",
     label:
@@ -49,6 +51,7 @@ const recordings = [
   },
   {
     slug: "circle",
+    autoPlay: false,
     title: "Circle",
     copy: "Followers, daily visits, and who you follow.",
     label:
@@ -56,6 +59,7 @@ const recordings = [
   },
   {
     slug: "explore",
+    autoPlay: false,
     title: "Explore",
     copy: "Boards people choose to share, sorted your way.",
     label: "Screen recording of Explore in the Purselo app, browsing and sorting shared boards",
@@ -104,6 +108,7 @@ export function AppPreview() {
                   src={`/preview/purselo-${recording.slug}.mp4`}
                   poster={`/preview/purselo-${recording.slug}-poster.webp`}
                   label={recording.label}
+                  autoPlay={recording.autoPlay}
                 >
                   <h4 className="font-serif text-2xl tracking-[-0.02em] text-ink">{recording.title}</h4>
                   <p className="mt-2 text-sm leading-relaxed text-muted">{recording.copy}</p>

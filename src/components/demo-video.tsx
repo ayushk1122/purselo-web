@@ -7,12 +7,13 @@ type DemoVideoProps = {
   src: string;
   poster: string;
   label: string;
+  autoPlay?: boolean;
   children: React.ReactNode;
 };
 
-export function DemoVideo({ src, poster, label, children }: DemoVideoProps) {
+export function DemoVideo({ src, poster, label, autoPlay = true, children }: DemoVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const pausedByUser = useRef(false);
+  const pausedByUser = useRef(!autoPlay);
   const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
