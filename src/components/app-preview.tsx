@@ -41,6 +41,13 @@ const recordings = [
       "Screen recording of the Purselo app, moving from a profile into baseball, pet photo, golf, and music pursuits",
   },
   {
+    slug: "orbit",
+    title: "Orbit",
+    copy: "Catch up on what\u2019s new from boards you follow.",
+    label:
+      "Screen recording of Orbit in the Purselo app, stepping through recent updates from boards the user follows",
+  },
+  {
     slug: "circle",
     title: "Circle",
     copy: "Followers, daily visits, and who you follow.",
@@ -86,7 +93,7 @@ export function AppPreview() {
           <ul
             aria-label="App recordings"
             tabIndex={0}
-            className="-mx-6 mt-10 flex snap-x snap-mandatory scroll-px-6 gap-6 overflow-x-auto px-6 pb-2 [scrollbar-width:none] sm:-mx-10 sm:scroll-px-10 sm:px-10 md:mx-0 md:mt-14 md:grid md:grid-cols-3 md:gap-8 md:overflow-visible md:px-0 md:pb-0 lg:gap-12 [&::-webkit-scrollbar]:hidden"
+            className="-mx-6 mt-10 flex snap-x snap-mandatory scroll-px-6 gap-6 overflow-x-auto px-6 pb-2 [scrollbar-width:none] sm:-mx-10 sm:scroll-px-10 sm:px-10 md:mx-0 md:mt-14 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-14 md:overflow-visible md:px-0 md:pb-0 xl:grid-cols-4 xl:gap-x-10 [&::-webkit-scrollbar]:hidden"
           >
             {recordings.map((recording) => (
               <li
