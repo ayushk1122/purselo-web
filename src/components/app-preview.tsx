@@ -32,6 +32,40 @@ const screens = [
   },
 ] as const;
 
+const recordings = [
+  {
+    slug: "demo",
+    autoPlay: true,
+    title: "Selo",
+    copy: "Step from your Selo into each Pursuit.",
+    label:
+      "Screen recording of the Purselo app, moving from a profile into baseball, pet photo, golf, and music pursuits",
+  },
+  {
+    slug: "orbit",
+    autoPlay: false,
+    title: "Orbit",
+    copy: "Catch up on what\u2019s new from boards you follow.",
+    label:
+      "Screen recording of Orbit in the Purselo app, stepping through recent updates from boards the user follows",
+  },
+  {
+    slug: "circle",
+    autoPlay: false,
+    title: "Circle",
+    copy: "Followers, daily visits, and who you follow.",
+    label:
+      "Screen recording of Circle in the Purselo app, showing followers, daily visits, and the people and Pursuits you follow",
+  },
+  {
+    slug: "explore",
+    autoPlay: false,
+    title: "Explore",
+    copy: "Boards people choose to share, sorted your way.",
+    label: "Screen recording of Explore in the Purselo app, browsing and sorting shared boards",
+  },
+] as const;
+
 const labelClass = "text-[0.72rem] uppercase tracking-[0.22em]";
 
 export function AppPreview() {
@@ -48,22 +82,40 @@ export function AppPreview() {
           </h2>
         </div>
 
-        <div className="mt-14 grid items-center gap-12 bg-cream px-6 py-14 sm:px-10 md:mt-20 md:grid-cols-12 md:gap-8 md:py-20 lg:px-16">
-          <div className="mx-auto w-full max-w-[17.5rem] md:col-span-5 md:max-w-[19rem] lg:col-span-4 lg:col-start-2">
-            <PhoneFrame>
-              <DemoVideo
-                src="/preview/purselo-demo.mp4"
-                poster="/preview/purselo-demo-poster.webp"
-                label="Screen recording of the Purselo app, moving from a profile into baseball, pet photo, golf, and music pursuits"
-              />
-            </PhoneFrame>
+        <div className="mt-14 bg-cream px-6 py-14 sm:px-10 md:mt-20 md:py-20 lg:px-16">
+          <div className="flex items-end justify-between gap-6">
+            <div>
+              <p className={cn(labelClass, "text-muted")}>In motion</p>
+              <h3 className="mt-5 font-serif text-4xl leading-[1.08] tracking-[-0.03em] text-ink md:text-5xl">
+                {site.tagline}
+              </h3>
+            </div>
+            <p className={cn(labelClass, "pb-2 text-muted md:hidden")} aria-hidden="true">
+              Swipe
+            </p>
           </div>
-          <div className="md:col-span-6 md:col-start-7 lg:col-span-5 lg:col-start-7">
-            <p className={cn(labelClass, "text-muted")}>In motion</p>
-            <h3 className="mt-5 max-w-[12ch] font-serif text-4xl leading-[1.08] tracking-[-0.03em] text-ink md:text-5xl">
-              {site.tagline}
-            </h3>
-          </div>
+          <ul
+            aria-label="App recordings"
+            tabIndex={0}
+            className="-mx-6 mt-10 flex snap-x snap-mandatory scroll-px-6 gap-6 overflow-x-auto px-6 pb-2 [scrollbar-width:none] sm:-mx-10 sm:scroll-px-10 sm:px-10 md:mx-0 md:mt-14 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-14 md:overflow-visible md:px-0 md:pb-0 xl:grid-cols-4 xl:gap-x-10 [&::-webkit-scrollbar]:hidden"
+          >
+            {recordings.map((recording) => (
+              <li
+                key={recording.slug}
+                className="w-[62vw] max-w-[15rem] shrink-0 snap-start md:mx-auto md:w-full md:max-w-[17.5rem]"
+              >
+                <DemoVideo
+                  src={`/preview/purselo-${recording.slug}.mp4`}
+                  poster={`/preview/purselo-${recording.slug}-poster.webp`}
+                  label={recording.label}
+                  autoPlay={recording.autoPlay}
+                >
+                  <h4 className="font-serif text-2xl tracking-[-0.02em] text-ink">{recording.title}</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{recording.copy}</p>
+                </DemoVideo>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="mt-20 md:mt-28">
