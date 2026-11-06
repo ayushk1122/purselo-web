@@ -6,12 +6,8 @@ type LinkFallbackProps = {
   pursuitId?: string;
 };
 
-const buttonClass =
-  "inline-flex min-h-12 items-center justify-center rounded-full px-7 text-sm font-medium tracking-[0.02em] transition-colors duration-300";
-
 export function LinkFallback({ username, pursuitId }: LinkFallbackProps) {
   const handle = `@${username}`;
-  const appUrl = pursuitId ? `purselo://${handle}/p/${pursuitId}` : `purselo://${handle}`;
 
   return (
     <section className="flex flex-1 items-center">
@@ -23,17 +19,14 @@ export function LinkFallback({ username, pursuitId }: LinkFallbackProps) {
         </h1>
         <p className="mx-auto mt-6 max-w-md text-base leading-relaxed text-muted md:text-lg">
           Purselo is where people share their Selo: one board for everything they&rsquo;re
-          into.
+          into. It&rsquo;s in beta on iPhone right now.
         </p>
-        <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
-          <a href={appUrl} className={`${buttonClass} bg-ink text-paper hover:bg-ink/85`}>
-            Open in Purselo
-          </a>
+        <div className="mt-10 flex justify-center">
           <Link
-            href="/#waitlist"
-            className={`${buttonClass} border border-ink/20 text-ink hover:border-ink`}
+            href="/beta"
+            className="inline-flex min-h-12 items-center justify-center rounded-full bg-ink px-7 text-sm font-medium tracking-[0.02em] text-paper transition-colors duration-300 hover:bg-ink/85"
           >
-            Get Purselo
+            Apply for the beta
           </Link>
         </div>
       </div>

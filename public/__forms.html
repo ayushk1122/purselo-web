@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Purselo forms</title>
+  </head>
+  <body>
+    <!-- Netlify reads this file at deploy time to learn the beta form's fields; /beta posts here. -->
+    <form name="beta" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="beta" />
+      <input name="bot-field" />
+      <input name="name" type="text" />
+      <input name="email" type="email" />
+      <textarea name="reason"></textarea>
+      <input name="eligible" type="checkbox" />
+    </form>
+  </body>
+</html>

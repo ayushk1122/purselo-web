@@ -3,7 +3,7 @@ import Link from "next/link";
 import { LegalPage } from "@/components/legal-page";
 import { app } from "@/lib/site";
 
-const lastUpdated = "November 1, 2026";
+const lastUpdated = "November 5, 2026";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -27,7 +27,8 @@ export default function PrivacyPage() {
     >
       <p>
         This policy explains what information the {app.name} iPhone app collects, how we
-        use it, and the choices you have. {app.name} is operated by {app.operator}{" "}
+        use it, and the choices you have. It also covers applications to the {app.name}{" "}
+        beta sent through this website. {app.name} is operated by {app.operator}{" "}
         (&ldquo;we,&rdquo; &ldquo;us&rdquo;), based in {app.location}. If you have a
         question, email <a href={mailto}>{email}</a>.
       </p>
@@ -143,6 +144,37 @@ export default function PrivacyPage() {
         </li>
       </ul>
 
+      <h2 id="beta">Beta applications and TestFlight</h2>
+      <p>
+        If you apply for the {app.name} beta on this website, we collect your name, your
+        email address, what you tell us about why you&rsquo;d like to join or how you heard
+        about {app.name}, and your confirmation that you&rsquo;re 13 or older and live in
+        the United States.
+      </p>
+      <ul>
+        <li>
+          We use your application only to decide whether to invite you and to contact you
+          about the beta.
+        </li>
+        <li>
+          Applications are received by Netlify, which hosts this website. Netlify may record
+          technical details with each application, such as your IP address and browser,
+          checks applications for spam using Akismet, and emails them to our team.
+        </li>
+        <li>
+          If we invite you, we add your name and email address to TestFlight, Apple&rsquo;s
+          beta testing service, and Apple emails you the invitation. TestFlight is covered by
+          Apple&rsquo;s own privacy policy. While you test, TestFlight shares with us your
+          device model and iOS version, when you installed and opened the beta, crash
+          reports, and any feedback or screenshots you choose to send.
+        </li>
+        <li>
+          We keep beta applications until the beta ends, then delete them. To withdraw your
+          application sooner, email <a href={mailto}>{email}</a> from the address you
+          applied with.
+        </li>
+      </ul>
+
       <h2>What we don&rsquo;t collect</h2>
       <ul>
         <li>No advertising and no ad tracking.</li>
@@ -150,7 +182,8 @@ export default function PrivacyPage() {
         <li>No selling of your data.</li>
         <li>
           We don&rsquo;t collect your location, contacts, phone number, browsing or search
-          history, or diagnostics.
+          history, or diagnostics. The one exception is the beta: if you test it, TestFlight
+          shares crash reports and basic usage with us, as described above.
         </li>
         <li>Purselo accesses your photos only when you pick them.</li>
       </ul>
@@ -202,7 +235,15 @@ export default function PrivacyPage() {
           posts, when your phone checks them with X once a day.
         </li>
         <li>
-          <strong>Netlify</strong>, which hosts this website.
+          <strong>Netlify</strong>, which hosts this website and receives beta applications,
+          with spam checks by <strong>Akismet</strong>.
+        </li>
+        <li>
+          <strong>Namecheap</strong>, which hosts our team&rsquo;s email, where beta
+          applications and messages you send us arrive.
+        </li>
+        <li>
+          <strong>Apple TestFlight</strong>, only if you join the beta.
         </li>
       </ul>
 
@@ -225,6 +266,7 @@ export default function PrivacyPage() {
           in about 30 days are removed.
         </li>
         <li>We keep your content for as long as your account exists.</li>
+        <li>Beta applications are kept until the beta ends, then deleted.</li>
         <li>
           Photos and videos that are no longer used by any board are deleted automatically
           after 14 days.
