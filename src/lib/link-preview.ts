@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { cache } from "react";
-import { site } from "@/lib/site";
+import { app, site } from "@/lib/site";
 
 export type LinkPreview = {
   kind: "selo" | "pursuit" | "private_selo";
@@ -67,15 +67,16 @@ export const getLinkPreview = cache(
 );
 
 export async function linkMetadata(username: string, pursuitId?: string): Promise<Metadata> {
+  const path = pursuitId ? `/@${username}/p/${pursuitId}` : `/@${username}`;
   const generic: Metadata = {
     title: { absolute: `@${username} on Purselo` },
     robots: { index: false },
+    itunes: { appId: app.appStoreId, appArgument: `${site.url}${path}` },
   };
 
   const preview = await getLinkPreview(username, pursuitId);
   if (!preview) return generic;
 
-  const path = pursuitId ? `/@${username}/p/${pursuitId}` : `/@${username}`;
   const image = { url: `${imageOrigin}${path}/opengraph-image`, width: 1200, height: 630 };
 
   return {

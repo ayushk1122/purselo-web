@@ -6,7 +6,7 @@ export const site = {
   year: 2026,
   tagline: "Your Pursuits, One Selo",
   description:
-    "Purselo brings every hobby and passion you share into one customizable place, your Selo. Coming soon to iOS.",
+    "Purselo brings every hobby and passion you share into one customizable place, your Selo. Now on iPhone.",
 } as const;
 
 export const app = {
@@ -14,10 +14,11 @@ export const app = {
   operator: "Purselo LLC",
   location: "Florida, United States",
   supportEmail: "support@purselo.app",
+  appStoreId: "6827355096",
+  appStoreUrl: "https://apps.apple.com/app/id6827355096",
 } as const;
 
 export const navLinks = [
   { href: "/#about", label: "About" },
-  { href: "/beta", label: "Beta" },
   { href: "/#contact", label: "Contact" },
 ] as const;

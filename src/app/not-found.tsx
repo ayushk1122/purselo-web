@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AppStoreBadge } from "@/components/app-store-badge";
 import { Monogram } from "@/components/brand";
 
 export default function NotFound() {
@@ -18,6 +19,13 @@ export default function NotFound() {
       >
         Return home
       </Link>
+      <div className="mt-14 border-t border-line pt-10">
+        <h2 className="font-serif text-3xl tracking-[-0.02em] text-ink">Get Purselo</h2>
+        <p className="mt-3 max-w-md text-base leading-relaxed text-muted">
+          Shared a Selo or Pursuit link? Open it on an iPhone with Purselo installed.
+        </p>
+        <AppStoreBadge className="-ml-2.5 mt-4" />
+      </div>
     </article>
   );
 }

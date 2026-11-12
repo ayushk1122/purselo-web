@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LinkFallback } from "@/components/link-fallback";
-import { linkMetadata, parseUsername } from "@/lib/link-preview";
+import { getLinkPreview, linkMetadata, parseUsername } from "@/lib/link-preview";
 
 export async function generateMetadata({
   params,
@@ -14,5 +14,5 @@ export default async function SeloLinkPage({ params }: PageProps<"/link/[usernam
   const username = parseUsername((await params).username);
   if (!username) notFound();
 
-  return <LinkFallback username={username} />;
+  return <LinkFallback username={username} preview={await getLinkPreview(username)} />;
 }

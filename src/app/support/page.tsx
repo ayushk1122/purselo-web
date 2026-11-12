@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AppStoreBadge } from "@/components/app-store-badge";
 import { LegalPage } from "@/components/legal-page";
 import { app, site } from "@/lib/site";
 
@@ -17,7 +18,8 @@ const supportEmail = app.supportEmail;
 export default function SupportPage() {
   return (
     <LegalPage eyebrow={`${app.name} for iPhone`} title="Support" email={supportEmail}>
-      <p>Purselo is coming soon to iOS.</p>
+      <p>Purselo is on the App Store for iPhone.</p>
+      <AppStoreBadge className="-ml-2.5" />
 
       <h2>Signing in</h2>
       <p>
