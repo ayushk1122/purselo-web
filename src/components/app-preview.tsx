@@ -73,12 +73,12 @@ export function AppPreview() {
     <section id="preview" className="border-t border-line" aria-labelledby="preview-heading">
       <div className="mx-auto w-full max-w-[90rem] px-5 py-24 sm:px-8 md:py-32 lg:px-12 lg:py-40">
         <div>
-          <p className={cn(labelClass, "text-muted")}>Preview</p>
+          <p className={cn(labelClass, "text-muted")}>The app</p>
           <h2
             id="preview-heading"
             className="mt-5 font-serif text-4xl leading-[1.08] tracking-[-0.03em] text-ink sm:text-5xl lg:text-6xl"
           >
-            A first <em className="italic">look.</em>
+            See it <em className="italic">for yourself.</em>
           </h2>
         </div>
 
