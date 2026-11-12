@@ -1,3 +1,4 @@
+import { AppStoreBadge } from "@/components/app-store-badge";
 import { Monogram } from "@/components/brand";
 
 export function Hero() {
@@ -10,16 +11,19 @@ export function Hero() {
         />
         <p className="rise flex items-center gap-3 text-[0.72rem] uppercase tracking-[0.22em] text-ink">
           <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-ink" />
-          Coming soon to iOS
+          Now on iPhone
         </p>
         <h1 className="rise rise-2 relative mt-8 font-serif text-[2.75rem] leading-[1.02] tracking-[-0.035em] text-ink sm:text-6xl md:mt-14 md:max-w-[16ch] md:text-7xl lg:text-[6.5rem]">
           <span className="block md:inline">Everything you </span>
           <em className="block italic md:inline">pursue, </em>
           <span className="block md:inline">in one place.</span>
         </h1>
-        <p className="rise rise-3 mt-12 max-w-md text-base leading-relaxed text-muted md:mt-auto md:pt-24 md:pb-16 md:text-lg md:leading-relaxed">
-          Every hobby and passion you share, brought together in one customizable place.
-        </p>
+        <div className="rise rise-3 mt-12 md:mt-auto md:pt-24 md:pb-16">
+          <p className="max-w-md text-base leading-relaxed text-muted md:text-lg md:leading-relaxed">
+            Every hobby and passion you share, brought together in one customizable place.
+          </p>
+          <AppStoreBadge height={48} className="-ml-3 mt-5" />
+        </div>
       </div>
     </section>
   );

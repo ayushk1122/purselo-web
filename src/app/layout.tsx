@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Instrument_Serif } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { site } from "@/lib/site";
+import { app, site } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -49,6 +49,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Purselo — Everything you pursue, in one place",
     description: site.description,
+  },
+  itunes: {
+    appId: app.appStoreId,
   },
 };
 

@@ -22,9 +22,9 @@ export function WhyPurselo() {
               Your life doesn&rsquo;t fit in a <em className="italic">single feed.</em>
             </h2>
             <p className="mt-8 max-w-xl text-base leading-relaxed text-muted md:text-lg">
-              Social apps are built around one stream of posts. There is no real way to
+              Social apps are built around one stream of posts. They give you no real way to
               organize every hobby you care about, or to display them creatively in one
-              place. Purselo will change that.
+              place. Purselo does.
             </p>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { LinkFallback } from "@/components/link-fallback";
-import { linkMetadata, parsePursuitId, parseUsername } from "@/lib/link-preview";
+import { getLinkPreview, linkMetadata, parsePursuitId, parseUsername } from "@/lib/link-preview";
 
 export async function generateMetadata({
   params,
@@ -18,5 +18,11 @@ export default async function PursuitLinkPage({ params }: PageProps<"/link/[user
   const pursuitId = parsePursuitId(id);
   if (!handle || !pursuitId) notFound();
 
-  return <LinkFallback username={handle} pursuitId={pursuitId} />;
+  return (
+    <LinkFallback
+      username={handle}
+      pursuitId={pursuitId}
+      preview={await getLinkPreview(handle, pursuitId)}
+    />
+  );
 }

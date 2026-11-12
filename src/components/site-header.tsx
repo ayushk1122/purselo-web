@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AppStoreBadge } from "@/components/app-store-badge";
 import { Wordmark } from "@/components/brand";
 import { Container } from "@/components/container";
 import { navLinks, site } from "@/lib/site";
@@ -14,19 +15,20 @@ export function SiteHeader() {
         >
           <Wordmark alt={site.name} priority className="w-[6.5rem] md:w-[7.75rem]" />
         </Link>
-        <nav aria-label="Primary">
-          <ul className="flex items-center gap-1 sm:gap-3">
+        <nav aria-label="Primary" className="flex items-center">
+          <ul className="hidden items-center gap-3 sm:flex">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="inline-flex min-h-11 items-center px-2 text-[0.92rem] text-muted transition-colors duration-300 hover:text-ink sm:px-3"
+                  className="inline-flex min-h-11 items-center px-3 text-[0.92rem] text-muted transition-colors duration-300 hover:text-ink"
                 >
                   {link.label}
                 </a>
               </li>
             ))}
           </ul>
+          <AppStoreBadge className="-mr-2.5 sm:ml-1" />
         </nav>
       </Container>
     </header>

@@ -1,3 +1,4 @@
+import { AppStoreBadge } from "@/components/app-store-badge";
 import { Monogram } from "@/components/brand";
 
 export function Closing() {
@@ -8,7 +9,7 @@ export function Closing() {
           tone="paper"
           className="pointer-events-none absolute top-16 right-5 w-28 opacity-90 sm:right-8 md:top-1/2 md:right-12 md:w-[min(28vw,24rem)] md:-translate-y-1/2"
         />
-        <p className="text-[0.72rem] uppercase tracking-[0.22em] text-sand">Coming soon to iOS</p>
+        <p className="text-[0.72rem] uppercase tracking-[0.22em] text-sand">Now on iPhone</p>
         <h2
           id="closing-heading"
           className="relative mt-8 max-w-[12ch] font-serif text-[2.7rem] leading-[1.02] tracking-[-0.035em] sm:text-6xl md:text-7xl lg:text-[6.25rem]"
@@ -17,6 +18,8 @@ export function Closing() {
           <span className="block">Your progress.</span>
           <span className="block italic">Your story.</span>
         </h2>
+        <AppStoreBadge height={48} className="relative -ml-3 mt-9" />
+
       </div>
     </section>
   );

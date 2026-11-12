@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AppStoreTextLink } from "@/components/app-store-badge";
 import { Wordmark } from "@/components/brand";
 import { Container } from "@/components/container";
 import { site } from "@/lib/site";
@@ -18,6 +19,7 @@ export function SiteFooter() {
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-sand">
             {site.tagline}
           </p>
+          <AppStoreTextLink className="mt-4 inline-flex min-h-11 items-center text-base text-paper underline decoration-paper/40 underline-offset-4 transition-colors duration-300 hover:decoration-paper" />
         </div>
         <div>
           <p className="text-[0.72rem] uppercase tracking-[0.22em] text-sand">Contact</p>
